@@ -1,0 +1,22 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package jku.bac.grpc.server.grpcserver;
+
+message CaOfItem {
+  string id = 1;
+  string label = 2;
+  double prize = 3;
+  int32 amount = 4;
+}
+
+message Response{
+
+}
+
+message CartRequest {
+  repeated CaOfItem caOfItem = 1;
+}
+
+service CartOfferingService {
+  rpc buyCart (CartRequest) returns (Response);
+}
